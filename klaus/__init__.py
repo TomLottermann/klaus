@@ -116,4 +116,7 @@ def make_app(repos, site_name, use_smarthttp=False, htdigest_file=None, httpauth
                     routes=[PATTERN],
                 )
 
+            else:
+                app.wsgi_app = dulwich_wrapped_app
+
     return app
